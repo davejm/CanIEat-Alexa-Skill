@@ -13,15 +13,18 @@ exports.handler = function(event, context, callback) {
 
 var handlers = {
     'LaunchRequest': function () {
-        this.emit('GetFact');
+				this.emit('HelloIntent');
+        /*this.emit('GetFact');*/
     },
     'HelloIntent': function () {
-        this.emit('GetFact');
+				this.emit('HelloIntent');
+				/*this.emit('GetFact');*/
     },
     'FoodQuery': function () {
         const food = this.event.request.intent.slots.Food.value;
         this.emit(':tell', `You asked about ${food}`);
     },
+		/*
     'GetFact': function () {
         // Get a random space fact from the space facts list
         var factIndex = Math.floor(Math.random() * FACTS.length);
@@ -33,6 +36,7 @@ var handlers = {
         // this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
         this.emit(':tell', 'Hello Dave! I hope you are well.')
     },
+		*/
     'AMAZON.HelpIntent': function () {
         var speechOutput = "You can say tell me a space fact, or, you can say exit... What can I help you with?";
         var reprompt = "What can I help you with?";
