@@ -1,0 +1,9 @@
+{
+	"intents": [ {
+		"intent": "DoCommand",
+		"slots": [ {
+			"name": "command",
+			"type": "LITERAL"
+		} ]
+	} ]
+}
