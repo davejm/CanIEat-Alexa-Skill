@@ -63,9 +63,22 @@ exports.getAllergens = (upc, cb) => {
       const json = JSON.parse(body)
       console.log(json)
 
-      cb(json.allergens)
+      const sortedAllergens = sortAllergens(json.allergens)
+
+      cb(sortedAllergens)
     }
   })
+}
+
+// Nic's func
+function sortAllergens(json) {
+  var red = [];
+  var yellow = [];
+  json.forEach(function(al){
+    if (al.allergen_red_ingredients != "") { red.push(al.allergen_name); }
+    if (al.allergen_yellow_ingredients != "") { yellow.push(al.allergen_name); }
+  });
+  return { 'red':red, 'yellow':yellow };
 }
 
 // Function to compute string distance (used for search relevance)
