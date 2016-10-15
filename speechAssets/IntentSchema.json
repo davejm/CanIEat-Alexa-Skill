@@ -1,7 +1,7 @@
 {
   "intents": [
     {
-      "intent": "GetNewFactIntent"
+      "intent": "HelloIntent"
     },
     {
       "intent": "AMAZON.HelpIntent"
@@ -11,6 +11,15 @@
     },
     {
       "intent": "AMAZON.CancelIntent"
+    },
+    {
+      "intent": "FoodQuery",
+      "slots": [
+        {
+          "name": "Food",
+          "type": "LITERAL"
+        }
+      ]
     }
   ]
 }
