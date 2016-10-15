@@ -8,7 +8,7 @@
           "type": "Food"
         }
       ]
-    }
+    },
     
     {
       "intent": "AllergicIntent",
