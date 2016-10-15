@@ -1,7 +1,7 @@
 require('dotenv').config()
 const request = require('request')
 
-let sessionID = null
+var sessionID = null
 const apiKey = process.env.LABEL_API_KEY
 const userID = 'XXXXX'
 const devID = 'XXXXX'
@@ -42,9 +42,9 @@ exports.search = (searchTerm, cb) => {
 }
 
 function getMostRelevant(results, searchTerm) {
-  let minDist = 9999999
-  let mostRelevantItem
-  let stringDist
+  var minDist = 9999999
+  var mostRelevantItem
+  var stringDist
   results.forEach((result) => {
     stringDist = levenshtein(result.product_name, searchTerm)
     if (stringDist < minDist) {
