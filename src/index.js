@@ -1,5 +1,5 @@
 var Alexa = require('alexa-sdk');
-// var foodapi = require('./foodapi.js');
+var foodapi = require('./foodapi.js');
 
 var APP_ID = undefined; //OPTIONAL: replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
 var SKILL_NAME = 'Can I Eat';
@@ -20,7 +20,16 @@ var handlers = {
     },
     'FoodQuery': function () {
         const food = this.event.request.intent.slots.Food.value;
-        this.emit(':tell', `You asked about ${food}`);
+        // this.emit(':tell', `You asked about ${food}`);
+        foodapi.makeSession(() => {
+          foodapi.search(food, (upc) => {
+            foodapi.getAllergens(upc, (allergens) => {
+              const bad = allergens.red
+              this.emit(':tell', `This food contains ${bad.join(', ')}`)
+            })
+          })
+        })
+
     },
 		/*
     'GetFact': function () {
