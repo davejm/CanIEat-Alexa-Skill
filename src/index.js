@@ -25,7 +25,8 @@ var handlers = {
           foodapi.search(food, (upc) => {
             foodapi.getAllergens(upc, (allergens) => {
               const bad = allergens.red
-              this.emit(':tell', `This food contains ${bad.join(', ')}`)
+              const allergenList = naturalJoin(bad);
+              this.emit(':tell', `This food contains ${allergenList}`)
             })
           })
         })
@@ -56,3 +57,10 @@ var handlers = {
         this.emit(':tell', 'Goodbye!');
     }
 };
+
+// Function to join a list of strings. You can customise the penultimate separator.
+function naturalJoin(arr, penSep) {
+    if (!penSep) {penSep = ' and '}
+    const str = arr.slice(0, -1).join(', ') + penSep + arr.slice(-1)
+    return str
+}
