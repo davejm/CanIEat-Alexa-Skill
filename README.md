@@ -1,3 +1,11 @@
+# Can I Eat?
+
+This Alexa skill will allow you to:
+1. Tell Alexa about your dietary requirements
+2. Ask if a food is ok for you to eat
+
+Invoke it with 'allergies...'
+
 # How to Build a Fact-Based Alexa Skill
 
 We want to introduce another way to help you build useful and meaningful skills for Alexa quickly. We have launched a fact skill template that makes it easy for developers or non-developers to create a skill similar to “Fact of the Day”, “Joke of the Day”, “Daily Reading” etc. The template leverages [AWS Lambda](https://aws.amazon.com/lambda/), the [Alexa Skills Kit (ASK)](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit), and the [ASK SDK](https://developer.amazon.com/public/community/post/Tx213D2XQIYH864/Announcing-the-Alexa-Skills-Kit-for-Node-js), while providing the business logic, use cases, error handling and help functions for your skill. You just need to come up with a fact idea (like “Food Facts”), plug in your fact list and edit the sample provided (we walk you through how it’s done). It's a valuable way to quickly learn the end-to-end process for building and publishing an Alexa skill.
