@@ -1,0 +1,2 @@
+EatIntent eat {Food}
+AllergicIntent allergic to {Food}
