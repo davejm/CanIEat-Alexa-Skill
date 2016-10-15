@@ -1,2 +1,1 @@
-EatIntent eat {Food}
-AllergicIntent allergic to {Food}
+TestIntent can I eat {Eat} even though I am allergic to {Allergy}

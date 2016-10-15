@@ -1,22 +1,16 @@
 {
   "intents": [
     {
-      "intent": "EatIntent",
+      "intent": "TestIntent",
       "slots": [
         {
           "name": "Eat",
           "type": "Food"
-        }
-      ]
-    },
-    
-    {
-      "intent": "AllergicIntent",
-      "slots": [
+        },
         {
           "name": "Allergy",
           "type": "Food"
-        }
+        } 
       ]
     }
   ]
