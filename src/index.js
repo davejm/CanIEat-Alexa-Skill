@@ -13,12 +13,10 @@ exports.handler = function(event, context, callback) {
 
 var handlers = {
     'LaunchRequest': function () {
-				this.emit('HelloIntent');
-        /*this.emit('GetFact');*/
+        this.emit('GetFact');
     },
     'HelloIntent': function () {
-				this.emit('HelloIntent');
-				/*this.emit('GetFact');*/
+				this.emit('GetFact');
     },
     'FoodQuery': function () {
         const food = this.event.request.intent.slots.Food.value;
