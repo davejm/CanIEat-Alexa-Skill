@@ -1,5 +1,5 @@
 var Alexa = require('alexa-sdk');
-var foodapi = require('./foodapi.js');
+// var foodapi = require('./foodapi.js');
 
 var APP_ID = undefined; //OPTIONAL: replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
 var SKILL_NAME = 'Can I Eat';
@@ -36,6 +36,10 @@ var handlers = {
     },
     'HelloIntent': function () {
         this.emit('GetFact');
+    },
+    'FoodQuery': function () {
+        const food = this.event.request.intent.slots.Food.value;
+        this.emit(':tell', `You asked about ${food}`);
     },
     'GetFact': function () {
         // Get a random space fact from the space facts list
