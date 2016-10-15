@@ -1,8 +1,8 @@
-'use strict';
 var Alexa = require('alexa-sdk');
+var foodapi = require('./foodapi.js');
 
 var APP_ID = undefined; //OPTIONAL: replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
-var SKILL_NAME = 'Space Facts';
+var SKILL_NAME = 'Can I Eat';
 
 /**
  * Array containing space facts.
@@ -34,7 +34,7 @@ var handlers = {
     'LaunchRequest': function () {
         this.emit('GetFact');
     },
-    'GetNewFactIntent': function () {
+    'HelloIntent': function () {
         this.emit('GetFact');
     },
     'GetFact': function () {
@@ -45,7 +45,8 @@ var handlers = {
         // Create speech output
         var speechOutput = "Here's your fact: " + randomFact;
 
-        this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
+        // this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
+        this.emit(':tell', 'Hello Dave! I hope you are well.')
     },
     'AMAZON.HelpIntent': function () {
         var speechOutput = "You can say tell me a space fact, or, you can say exit... What can I help you with?";
