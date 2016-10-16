@@ -1,16 +1,56 @@
 {
   "intents": [
     {
-      "intent": "ListMyAllergies"
+      "intent": "AllergensList"
     },
     {
-      "intent": "AMAZON.HelpIntent"
+      "intent": "AllergensAdd",
+      "slots": [
+        {
+          "name": "Allergen",
+          "type": "Allergen"
+        }
+      ]
     },
     {
-      "intent": "AMAZON.StopIntent"
+      "intent": "AllergensDelete",
+      "slots": [
+        {
+          "name": "Allergen",
+          "type": "Allergen"
+        }
+      ]
     },
     {
-      "intent": "AMAZON.CancelIntent"
+      "intent": "AllergicTo",
+      "slots": [
+        {
+          "name": "Allergen",
+          "type": "Allergen"
+        }
+      ]
+    },
+    {
+      "intent": "WhatAllergens",
+      "slots": [
+        {
+          "name": "Food",
+          "type": "LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "IsIn",
+      "slots": [
+        {
+          "name": "Food",
+          "type": "LITERAL"
+        },
+        {
+          "name": "Allergen",
+          "type": "Allergen"
+        }
+      ]
     },
     {
       "intent": "FoodQuery",
@@ -20,6 +60,15 @@
           "type": "LITERAL"
         }
       ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
     }
   ]
 }

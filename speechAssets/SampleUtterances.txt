@@ -1,2 +1,39 @@
 FoodQuery can I eat {do something|Food}
-ListMyAllergies what are my allergies
+FoodQuery what allergines are in {do something|Food}
+FoodQuery may I eat {do something|Food}
+FoodQuery can I have {do something|Food}
+FoodQuery may I have {do something|Food}
+FoodQuery is it ok for me to eat {do something|Food}
+
+AllergensList Can you pleaes list my Allergens
+AllergensList I am allergic to
+AllergensList Tell me my Allergens
+AllergensList Tell me
+AllergensList What are my Allergens
+AllergensList List my Allergens
+AllergensList List
+AllergensList What Allergens
+AllergensList What am I allergic to
+
+AllergensDelete Remove {Allergen}
+AllergensDelete Remove {Allergen} as an Allergen
+AllergensDelete Delete {Allergen}
+AllergensDelete Delete {Allergen} as an Allergen
+AllergensDelete Please remove {Allergen}
+AllergensDelete Please remove {Allergen} as an Allergen
+AllergensDelete Please delete {Allergen}
+AllergensDelete Please delete {Allergen} as an Allergen
+AllergensDelete I am not allergic to {Allergen}
+AllergensDelete I am no longer allergic to {Allergen}
+
+AllergensAdd Add {Allergen}
+AllergensAdd Add my {Allergen} Allergy
+AllergensAdd I am also allergic to {Allergen}
+AllergensAdd I can't eat {Allergen}
+AllergensAdd I am allergic to {Allergen}
+AllergensAdd I am not able to eat {Allergen}
+
+AllergicTo Am I allergic to {Allergen}
+
+WhatAllergens What allergens are in {do something|Food}
+IsIn Is There {Allergen} in {do something|Food}
