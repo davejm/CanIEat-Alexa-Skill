@@ -34,13 +34,13 @@ var handlers = {
               const minor = allergens.yellow
               const minorAllergenList = naturalJoin(minor)
 
-              if (bad.length() >= 1 && minor.length() >= 1) {
+              if (bad.length >= 1 && minor.length >= 1) {
                 this.emit(':tell', `${food} contains ${allergenList} and traces of ${minorAllergenList}`)
               }
-              else if (bad.length() >= 1 ) {
+              else if (bad.length >= 1 ) {
                 this.emit(':tell', `${food} contains ${allergenList}`)
               }
-              else if (minor.length() >= 1) {
+              else if (minor.length >= 1) {
                 this.emit(':tell', `${food} contains traces of ${minorAllergenList}`)
               }
               else {
