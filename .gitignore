@@ -3,6 +3,7 @@ logs
 *.log
 npm-debug.log*
 index.zip
+firebase-creds.json
 
 # Runtime data
 pids

@@ -1,6 +1,15 @@
 var Alexa = require('alexa-sdk');
 var foodapi = require('./foodapi.js');
 
+var firebase = require("firebase");
+firebase.initializeApp({
+  serviceAccount: "firebase-creds.json",
+  databaseURL: "https://can-i-eat-alexa-skill.firebaseio.com/"
+});
+const db = firebase.database();
+
+const userId = 'one'
+
 var APP_ID = undefined; //OPTIONAL: replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
 var SKILL_NAME = 'Can I Eat';
 
@@ -31,6 +40,13 @@ var handlers = {
           })
         })
 
+    },
+    'ListMyAllergies': function () {
+        const ref = db.ref(`allergies/${userId}`)
+        ref.once("value", (snapshot) => {
+            const allergies = snapshot.val()
+            this.emit(':tell', `You have allergies to: ${naturalJoin(allergies)}`)
+        });
     },
 		/*
     'GetFact': function () {
