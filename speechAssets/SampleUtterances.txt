@@ -1,2 +1,0 @@
-FoodQuery can I eat {do something|Food}
-ListMyAllergies what are my allergies
